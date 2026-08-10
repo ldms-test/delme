@@ -12,6 +12,7 @@ layout: none
     if v.status == "passed"
       assign passed = passed | plus: 1
     endif
+  endfor
 %}
 {
   "passed": {{passed}}
