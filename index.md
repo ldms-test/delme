@@ -23,7 +23,7 @@ DATA
 
 {% for ent in site.data %}
 {%   if ent[1].status == "passed" %}
-{%     assign color = "gree" %}
+{%     assign color = "green" %}
 {%   elsif ent[1].status == "queued" %}
 {%     assign color = "purple" %}
 {%   elsif ent[1].status == "failed" %}
@@ -32,7 +32,7 @@ DATA
 {%     assign color = "black" %}
 {%   endif %}
 {%   assign total = total | plus: 1 %}
-{%   assign passed = total | plus: ent[1].passed %}
+{%   assign passed = passed | plus: ent[1].passed %}
 * {{ ent[0] }}: {{tag}} <span style="color:{{ color }}">{{ ent[1].status }}</span>
 
 {% endfor %}
