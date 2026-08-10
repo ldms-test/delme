@@ -1,1 +1,1 @@
-* test2: 🔵 QUEUED 
+* test2: 🟣 QUEUED 
