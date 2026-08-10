@@ -13,3 +13,14 @@ TESTS
 {% endfor %}
 
 Total: {{ passed }}/{{ total }}
+
+
+DATA
+====
+
+{% assign total = 0 %}
+{% assign passed = 0 %}
+
+{% for ent in site.data %}
+* {{ ent[0] }}
+{% endfor %}
