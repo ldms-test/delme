@@ -22,5 +22,15 @@ DATA
 {% assign passed = 0 %}
 
 {% for ent in site.data %}
-* {{ ent[0] }}: {{ ent[1].status }}
+{%   if ent[1].status == "passed" %}
+{%     assign tag = "🟢" %}
+{%   elsif ent[1].status == "queued" %}
+{%     assign tag = "🟣" %}
+{%   elsif ent[1].status == "failed" %}
+{%     assign tag = "🔴" %}
+{%   else %}
+{%     assign tag = "" %}
+{%   endif %}
+* {{ ent[0] }}: {{tag}} {{ ent[1].status }}
+
 {% endfor %}
