@@ -16,6 +16,7 @@ TESTS
 Include ...
 
 {% assign total = 0 %}
+{% assign passed = 0 %}
 
 {% assign filtered_files = site.static_files | where_exp: "file", "file.path contains '/test'" %}
 {% for file in filtered_files %}
