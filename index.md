@@ -23,14 +23,17 @@ DATA
 
 {% for ent in site.data %}
 {%   if ent[1].status == "passed" %}
-{%     assign tag = "🟢" %}
+{%     assign color = "gree" %}
 {%   elsif ent[1].status == "queued" %}
-{%     assign tag = "🟣" %}
+{%     assign color = "purple" %}
 {%   elsif ent[1].status == "failed" %}
-{%     assign tag = "🔴" %}
+{%     assign color = "red" %}
 {%   else %}
-{%     assign tag = "" %}
+{%     assign color = "black" %}
 {%   endif %}
-* {{ ent[0] }}: {{tag}} {{ ent[1].status }}
+{%   assign total = total | plus: 1 %}
+{%   assign passed = total | plus: ent[1].passed %}
+* {{ ent[0] }}: {{tag}} <span style="color:{{ color }}">{{ ent[1].status }}</span>
 
 {% endfor %}
+Total: {{passed}} / {{total}}
