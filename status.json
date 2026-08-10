@@ -5,15 +5,13 @@ layout: none
 {% assign total = 0 %}
 {% assign passed = 0 %}
 {% assign queued = 0 %}
-{% 
-  for t in site.data 
-    assign k = t[0]
-    assign v = t[1]
-    if v.status == "passed"
-      assign passed = passed | plus: 1
-    endif
-  endfor
-%}
+{% for t in site.data %}
+{%   assign k = t[0] %}
+{%   assign v = t[1] %}
+{%   if v.status == "passed" %}
+{%     assign passed = passed | plus: 1 %}
+{%   endif %}
+{% endfor %}
 {
   "passed": {{passed}}
 }
