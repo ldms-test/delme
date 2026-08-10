@@ -7,7 +7,7 @@ url: "https://ldms-test.github.io"
 baseurl: "/delme"
 
 # Build Settings
-theme: jekyll-theme-minima
+theme: jekyll-theme-slate
 markdown: kramdown
 permalink: /:title/
 
