@@ -26,4 +26,4 @@ Include ...
 {% endif %}
 {% endfor %}
 
-Total: {{ total }}
+Total: {{ passed }}/{{ total }}
