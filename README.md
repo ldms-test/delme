@@ -24,4 +24,4 @@ Include ...
 
 
 Statically include 
-{% include test0/status.md %}
+{% include_relative test0/status.md %}
