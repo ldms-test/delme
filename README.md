@@ -21,7 +21,7 @@ Include ...
 {% for file in filtered_files %}
 {% if file.name contains 'status.md' %}
 {% include_relative {{ file.path }} %}
-{% total = total | plus: 1 %}
+{% assign total = total | plus: 1 %}
 {% endif %}
 {% endfor %}
 
