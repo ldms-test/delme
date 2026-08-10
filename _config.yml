@@ -1,0 +1,16 @@
+# Site Settings
+title: "DELETE ME"
+description: "Delete Me!"
+
+# Routing (Crucial for subpaths)
+url: "https://ldms-test.github.io"
+baseurl: "/delme"
+
+# Build Settings
+theme: jekyll-theme-minimal
+markdown: kramdown
+permalink: /:title/
+
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
