@@ -1,1 +1,1 @@
-* test0: <span color=green>PASSED</span>
+* test0: <span style="color:green">PASSED</span>
