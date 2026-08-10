@@ -5,13 +5,34 @@ layout: none
 {% assign total = 0 %}
 {% assign passed = 0 %}
 {% assign queued = 0 %}
+{% assign failed = 0 %}
 {% for t in site.data %}
 {%   assign k = t[0] %}
 {%   assign v = t[1] %}
+{%   assign total = total | plus:1 %}
 {%   if v.status == "passed" %}
 {%     assign passed = passed | plus: 1 %}
+{%   elsif v.status == "queued" %}
+{%     assign queued = queued | plus: 1 %}
+{%   elsif v.status == "failed" %}
+{%     assign failed = failed | plus: 1 %}
 {%   endif %}
 {% endfor %}
+{% if queued > 0 %}
+{%   assign color = "blue" %}
+{%   assign message = "running" %}
+{% elsif failed > 0 %}
+{%   assign color = "red" %}
+{%   assign message = passed | concat: "/" | concat: total %}
+{% elsif passed > 0 %}
+{%   assign color = "green" %}
+{%   assign message = passed | concat: "/" | concat: total %}
+{% else %}
+{%   assign color = "grey" %}
+{% endif %}
 {
-  "passed": {{passed}}
+  "schemaVersion": 1,
+  "label": "{{label}}",
+  "message": "{{message}}",
+  "color": "{{color}}"
 }
