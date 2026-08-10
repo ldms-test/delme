@@ -1,3 +1,7 @@
+---
+layout: none
+---
+
 {% assign total = 0 %}
 {% assign passed = 0 %}
 {% assign queued = 0 %}
