@@ -22,5 +22,5 @@ DATA
 {% assign passed = 0 %}
 
 {% for ent in site.data %}
-* {{ ent[0] }}
+* {{ ent[0] }}: {{ ent[1].status }}
 {% endfor %}
